@@ -10,6 +10,24 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  useEffect(() => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        async (pos) => {
+          const weather = await fetchWeather(
+            pos.coords.latitude,
+            pos.coords.longitude,
+            "Sua localizacao"
+          );
+          setData(weather);
+        },
+        () => handleSearch("Rio Grande")
+      );
+    } else {
+      handleSearch("Rio Grande");
+    }
+  }, []);
+
   async function handleSearch(query: string) {
     setLoading(true);
     setError("");
@@ -31,10 +49,6 @@ const App = () => {
 
     setLoading(false);
   }
-
-  useEffect(() => {
-    handleSearch("Rio Grande");
-  }, []);
 
   return (
     <div className="min-h-screen flex flex-col items-center py-10 sm:py-16 px-4">
