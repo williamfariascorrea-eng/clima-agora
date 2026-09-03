@@ -1,5 +1,7 @@
 # Clima Agora
 
+> **Live demo:** [clima-agora-hcei1g4kz-williamfariascorrea-engs-projects.vercel.app](https://clima-agora-hcei1g4kz-williamfariascorrea-engs-projects.vercel.app)
+
 A clean, real-time weather app built with **React, TypeScript, Vite and Tailwind CSS**. Search any city or use your location to get accurate conditions — with a 7-day forecast.
 
 ![React](https://img.shields.io/badge/React-19-61dafb?style=flat&logo=react&logoColor=white)
